@@ -20,7 +20,9 @@ function App() {
     글제목변경( newArray );
   }
   function 원래대로() {
-    글제목변경(['남자 코트 추천', '강남 우동 맛집', '서초 중국음식 맛집']);
+    var newArray = [...글제목];
+    글제목변경( ...글제목 );
+    console.log(newArray);
   }
   
   return (
