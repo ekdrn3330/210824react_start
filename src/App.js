@@ -78,6 +78,7 @@ function App() {
         : null
       }
 
+      <Profile />
     </div>
   );
 }
@@ -87,9 +88,30 @@ function Modal(props) {
     <div className="modal">
       <h2>{ props.글제목[props.누른제목] }</h2>
       <p>날짜</p>
-      <p>내용</p>
+      <p>상세내용</p>
     </div>
   );
+}
+
+class Profile extends React.Component {
+  constructor() {
+    super();
+    this.state = { name : 'Kim', age : 30 }
+  }
+
+  changeName = () => {
+    this.setState( {name : 'Park'} );
+  }
+
+  render() {
+    return (
+      <div>
+        <h3>프로필입니다</h3>
+        <p>저는 { this.state.name } 입니다</p>
+        <button onClick={ this.changeName }>버튼</button>
+      </div>
+    )
+  }
 }
 
 export default App;
